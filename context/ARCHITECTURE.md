@@ -301,15 +301,33 @@ Controllers must not become a replacement for services, view models, or content 
 
 # 8. View Architecture
 
-Views follow:
+The Blade view layer follows a layout + reusable component architecture.
+
+### Directory Structure
 
 ```text
-Layout
-   ↓
-Page
-   ↓
-Reusable Components
-```
+resources/
+└── views/
+    ├── layouts/
+    │   └── app.blade.php
+    │
+    ├── components/
+    │   ├── navigation.blade.php
+    │   ├── footer.blade.php
+    │   ├── button.blade.php
+    │   ├── section-heading.blade.php
+    │   ├── project-meta.blade.php
+    │   ├── project-image.blade.php
+    │   ├── technical-note.blade.php
+    │   └── social-link.blade.php
+    │
+    ├── pages/
+    │   ├── home.blade.php
+    │   └── projects/
+    │       └── assetflow.blade.php
+    │
+    └── partials/
+        └── seo.blade.php
 
 ### Application Layout
 
@@ -328,6 +346,75 @@ Responsible for:
 * Main content slot
 * Footer
 
+## Global Layout Contract
+
+`layouts/app.blade.php` is the global application shell.
+
+Every public page must extend `layouts.app`.
+
+The global layout is responsible for:
+
+- HTML document structure
+- SEO metadata
+- Global assets
+- Navigation
+- Main content container
+- Footer
+- Head and script stacks
+
+Page-specific content must be provided through:
+
+`@section('content')`
+
+Pages must not duplicate global navigation or footer markup.
+
+---
+
+## Navigation Contract
+
+`components/navigation.blade.php` is the single source of truth
+for global site navigation.
+
+The navigation is rendered exclusively by `layouts/app.blade.php`.
+
+Desktop navigation:
+
+- INDEX
+- PROJECTS
+- ABOUT
+- CONTACT
+- GITHUB
+
+Brand:
+
+`REVAN.DEV`
+
+Internal navigation must use named Laravel routes.
+
+External destinations must use explicit external URLs.
+
+The GitHub link is treated as an external action and must not
+participate in internal route active-state logic.
+
+The navigation must provide:
+
+- active route state
+- responsive mobile navigation
+- keyboard accessibility
+- visible focus states
+- semantic navigation markup
+- accessible mobile menu state
+
+Navigation must follow DESIGN.md.
+
+Do not use:
+
+- pill shapes
+- rounded corners
+- glassmorphism
+- excessive shadows
+- decorative floating containers
+- placeholder `href="#"` links
 ---
 
 # 9. Page Architecture

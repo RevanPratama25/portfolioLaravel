@@ -4,6 +4,41 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    /* Fonts */
+    --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    /* Colors */
+    --color-canvas: #F7F8FA;
+    --color-surface: #FFFFFF;
+    --color-surface-soft: #F1F3F5;
+    --color-surface-accent: #E9EEFF;
+
+    /* Text Colors */
+    --color-text-primary: #16181D;
+    --color-text-secondary: #5F6672;
+    --color-text-muted: #858C98;
+    --color-text-inverse: #FFFFFF;
+
+    /* Border Colors */
+    --color-border-default: #DDE1E7;
+    --color-border-strong: #C7CDD6;
+    --color-border-accent: #C7D3FF;
+
+    /* Accent Colors */
+    --color-accent: #315EF8;
+    --color-accent-dark: #2448C7;
+    --color-accent-soft: #E9EEFF;
+
+    /* Semantic Colors */
+    --color-success: #16803C;
+    --color-warning: #A15C00;
+    --color-error: #C62828;
+    --color-info: #315EF8;
+}
+
+@layer base {
+    body {
+        @apply bg-canvas text-text-primary font-sans antialiased;
+    }
 }
