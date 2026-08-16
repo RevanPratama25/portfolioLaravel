@@ -61,7 +61,7 @@
             <!-- PROJECT IMAGE -->
             <div class="lg:col-span-7 order-1 lg:order-2">
                 <a href="{{ route('projects.assetflow') }}" class="block focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2">
-                    <x-project-image /> 
+                    <x-project-image src="{{ asset('images/assetflowstaff.webp') }}" alt="AssetFlow Dashboard" />
                 </a>
             </div>
         </div>
