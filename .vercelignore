@@ -1,0 +1,13 @@
+/node_modules
+/vendor
+/storage/framework/views/*
+/storage/logs/*
+/storage/framework/sessions/*
+/storage/framework/cache/*
+*.sqlite
+.env
+.idea
+.vscode
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+/public/hot
