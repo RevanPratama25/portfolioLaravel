@@ -2,7 +2,7 @@
 
 <div {{ $attributes->merge(['class' => 'w-full aspect-video bg-surface-soft border border-border-default flex items-center justify-center relative overflow-hidden group']) }}>
     @if($src)
-        <img src="{{ $src }}" alt="{{ $alt }}" class="object-fill w-full h-full" loading="lazy">
+        <img src="{{ $src }}" alt="{{ $alt }}" class="object-fill object-cover w-full h-full rounded" loading="lazy">
     @else
         <!-- Structural Placeholder -->
         <div class="absolute inset-0 bg-surface-soft grid place-items-center">

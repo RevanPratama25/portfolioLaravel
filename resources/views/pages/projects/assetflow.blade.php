@@ -37,7 +37,7 @@
 
     <!-- 2. HERO VISUAL -->
     <div class="mb-16 md:mb-24 w-full aspect-[16/9] bg-surface-soft border border-border-default flex items-center justify-center overflow-hidden">
-        <x-project-image src="{{ asset('images/assetflowstaff.webp') }}" alt="AssetFlow Dashboard" />    </div>
+        <x-project-image src="{{ asset('images/assetflow-landing-page.webp') }}" alt="AssetFlow Landing Page" />    </div>
 
     <!-- 2-Column Grid for Metadata & Narrative -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-24">
